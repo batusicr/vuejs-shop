@@ -1,10 +1,12 @@
 <template>
 	<div class="card h-100">
 		<img :src="product.image" :alt="product.title" class="card-img-top product-img"/>
-		<div class="card-body">
+		<div class="card-body p-4">
 			<h5 class="card-title">{{ product.title }}</h5>
 			<p class="card-text">Category: {{ product.category }}</p>
 			<p class="card-text">Price: {{ product.price }}€</p>
+		</div>
+		<div class="card-footer p-4 pt-0 border-top-0 bg-transparent text-center">
 			<button @click="addToCart(product)" class="btn btn-primary">Add to Cart</button>
 		</div>
 	</div>
@@ -32,6 +34,6 @@
 		width: 200px;
 		height: 200px;
 		object-fit: contain;
-		margin: 16px auto 0;
+		margin: 24px auto 0;
 	}
 </style>

@@ -1,20 +1,15 @@
 <template>
-	<div class="row">
-		<aside class="col-md-4 order-md-2 mb-4">
-			Sidebar
-		</aside>
-		<main class="col-md-8 order-md-1">
-			<div class="row gy-2">
-				<div v-for="product in pageProducts" :key="product.id" class="col-lg-4 col-md-6 gx-2">
-					<card :product="product" @add-to-cart="addToCart" class="card"></card>
-				</div>
-			</div>
-			<pagination
-				:current-page="currentPage"
-				:total-pages="totalPages"
-				@page-changed="changePage">
-			</pagination>
-		</main>
+	<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+		<div v-for="product in pageProducts" :key="product.id" class="col mb-5">
+			<card :product="product" @add-to-cart="addToCart"></card>
+		</div>
+	</div>
+	<div class="d-flex justify-content-center">
+		<pagination
+			:current-page="currentPage"
+			:total-pages="totalPages"
+			@page-changed="changePage">
+		</pagination>
 	</div>
 </template>
 
@@ -32,7 +27,7 @@
 			return {
 				products: [],
 				currentPage: 1,
-				pageSize: 9
+				pageSize: 8
 			};
 		},
 		computed: {
@@ -56,7 +51,7 @@
 				}
 			},
 			addToCart(product) {
-				//TODO: add to store
+				this.$store.commit('addToCart', product);
 			},
 			changePage(page) {
 				this.currentPage = page;

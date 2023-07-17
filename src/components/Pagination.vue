@@ -1,6 +1,6 @@
 <template>
 	<nav>
-		<ul class="pagination">
+		<ul class="pagination m-0">
 			<li class="page-item" :class="{'disabled': currentPage === 1}">
 				<a class="page-link" href="#" @click.prevent="changePage(currentPage - 1)">Previous</a>
 			</li>
