@@ -41,12 +41,10 @@
 					quantity = 1;
 				}
 
-				if (this.product.quantity !== quantity) {
-					this.$emit('update-quantity', {
-						product: this.product,
-						quantity: quantity,
-					});
-				}
+				this.$emit('update-quantity', {
+					product: this.product,
+					quantity: quantity,
+				});
 			},
 			removeFromCart() {
 				this.$emit('remove-from-cart', this.product);

@@ -24,11 +24,11 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex';
+
 	export default {
 		computed: {
-			cartProducts() {
-				return this.$store.state.cartProducts;
-			}
+			...mapState(['cartProducts'])
 		}
 	};
 </script>
