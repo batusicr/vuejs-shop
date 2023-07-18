@@ -37,7 +37,7 @@
 </template>
 
 <script>
-	import { mapState, mapMutations } from 'vuex';
+	import { mapGetters, mapActions } from 'vuex';
 	import CartItem from '@/components/CartItem.vue';
 
 	export default {
@@ -45,7 +45,7 @@
 			CartItem
 		},
 		computed: {
-			...mapState(['cartProducts']),
+			...mapGetters('cart', ['cartProducts']),
 			totalPrice() {
 				const total = this.cartProducts.reduce((sum, product) => {
 					return (sum + product.price * product.quantity);
@@ -55,7 +55,7 @@
 			}
 		},
 		methods: {
-			...mapMutations(['removeFromCart', 'updateQuantity'])
+			...mapActions('cart', ['updateQuantity', 'removeFromCart'])
 		}
 	};
 </script>

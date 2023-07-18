@@ -14,6 +14,7 @@
 </template>
 
 <script>
+	import { mapActions } from 'vuex';
 	import axios from 'axios';
 	import Card from '@/components/Card.vue';
 	import Pagination from '@/components/Pagination.vue';
@@ -42,6 +43,7 @@
 			}
 		},
 		methods: {
+			...mapActions('cart', ['addToCart']),
 			async fetchProducts() {
 				try {
 					const response = await axios.get('https://fakestoreapi.com/products');
@@ -49,9 +51,6 @@
 				} catch (error) {
 					console.error(error);
 				}
-			},
-			addToCart(product) {
-				this.$store.commit('addToCart', product);
 			},
 			changePage(page) {
 				this.currentPage = page;

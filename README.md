@@ -15,3 +15,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+Credentials for login (https://fakestoreapi.com/docs#a-login):
+
+```r
+Username: mor_2314
+Password: 83r5^_
+```
