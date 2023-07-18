@@ -4,7 +4,7 @@
 			<card :product="product" @add-to-cart="addToCart"></card>
 		</div>
 	</div>
-	<div class="d-flex justify-content-center">
+	<div v-if="totalPages > 1" class="d-flex justify-content-center">
 		<pagination
 			:current-page="currentPage"
 			:total-pages="totalPages"
