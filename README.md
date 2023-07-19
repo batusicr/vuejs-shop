@@ -10,12 +10,6 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
 Credentials for login (https://fakestoreapi.com/docs#a-login):
 
 ```r
