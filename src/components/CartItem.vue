@@ -12,7 +12,7 @@
 			<p class="text-muted fw-light mb-1 fs-7">Quantity</p>
 			<input
 				type="number"
-				v-model.number="product.quantity"
+				:value="product.quantity"
 				@input="updateQuantity($event.target.value)"
 				class="form-control"
 			/>
